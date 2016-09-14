@@ -23,17 +23,27 @@ void draw() {
 
 
 void setup() {
-  size( 500, 500);
+  size( 640, 480);
   //strokeWeight(3);
   //stroke(20, 30, 134);
 }
+
 void draw() {
+  noStroke();
+  float tempR = map(mouseX, 1, width, 1, 255);
+  float tempG = map(mouseY, 1, height, 1, 255);
+  
+  for ( int i = 0; i<4; i++){
+    fill(tempR, tempG, random(1, 255));
+    ellipse(mouseX+random(-10, 10), mouseY-random(-10, 10), 1, 1);
+  }
+/*void draw() {
 fill(255, 0, 0);
 rect(5, 5, 50, 50);
 if (mouseX > 10 && mouseX < 70 && mouseY > 10 && mouseY < 70) {
   fill(0, 255, 0);
   rect(5, 5, 50, 50);
-}
+}*/
 
 
 
